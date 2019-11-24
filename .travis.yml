@@ -1,0 +1,6 @@
+language: shell
+os: windows
+
+jdk: openjdk11
+install: true
+script: mvn clean verify
