@@ -3,9 +3,12 @@ os: windows
 
 jdk: openjdk11
 before-install:
-  - wget https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.5%2B10/OpenJDK11U-jdk_x64_windows_hotspot_11.0.5_10.zip
-  - unzip OpenJDK11U-jdk_x64_windows_hotspot_11.0.5_10.zip
-  - export JAVA_HOME=$HOME/adangel/travis-windows-test/jdk-11.0.5+10
-  - export PATH=$JAVA_HOME/bin:$PATH
+  - wget https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.5%2B10/OpenJDK11U-jdk_x64_windows_hotspot_11.0.5_10.zip -O ${HOME}/openjdk.zip
+  - mkdir -p ${HOME}/openjdk
+  - 7z x ${HOME}/openjdk.zip -o${HOME}/openjdk
+  - mv ${HOME}/openjdk/*/* ${HOME}/openjdk/
+  - export JAVA_HOME="${HOME}/openjdk"
+  - export PATH="${JAVA_HOME}/bin:${PATH}"
+  - java -version
 install: true
 script: ./mvnw clean verify
