@@ -3,4 +3,4 @@ os: windows
 
 jdk: openjdk11
 install: true
-script: mvn clean verify
+script: ./mvnw clean verify
