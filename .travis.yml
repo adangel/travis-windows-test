@@ -13,6 +13,7 @@ before-install:
   - java -version
 install: true
 script: ./mvnw clean verify
+after_success: true
 
 cache:
   directories:
