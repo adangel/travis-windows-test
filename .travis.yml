@@ -19,7 +19,7 @@ before_install:
   - java -version
 install: true
 before_script: true
-script: ./mvnw clean verify
+script: source build-deploy.sh
 after_success: true
 
 cache:
