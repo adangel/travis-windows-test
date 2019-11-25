@@ -12,6 +12,7 @@ before-install:
   - export PATH="${JAVA_HOME}/bin:${PATH}"
   - java -version
 install: true
+before_script: true
 script: ./mvnw clean verify
 after_success: true
 
