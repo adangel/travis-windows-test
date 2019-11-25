@@ -1,5 +1,12 @@
-language: shell
-os: windows
+language: java
+
+matrix:
+  fast_finish: true
+  include:
+    - stage: build
+      name: "windows - mvn verify"
+      language: shell
+      os: windows
 
 jdk: openjdk11
 before-install:
