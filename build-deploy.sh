@@ -11,9 +11,9 @@ MVN_BUILD_FLAGS="-B -V"
 ./mvnw verify $MVN_BUILD_FLAGS
 
 ps -W | sort | tee ps-after.txt
-diff -ub ps-before.txt ps-after.txt
+diff -ub ps-before.txt ps-after.txt || true
 
 gpgconf --kill gpg-agent
 
 ps -W | sort | tee ps-after2.txt
-diff -ub ps-before.txt ps-after2.txt
+diff -ub ps-before.txt ps-after2.txt || true
