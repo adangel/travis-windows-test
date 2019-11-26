@@ -4,7 +4,7 @@ set -e
 ps -W | sort | tee ps-before.txt
 
 mkdir -p "$HOME/.gpg"
-gpg --batch --import gpg-key-pub-sec.asc
+gpg --no-autostart --batch --import gpg-key-pub-sec.asc
 
 
 MVN_BUILD_FLAGS="-B -V"
